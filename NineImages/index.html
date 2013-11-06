@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Nine Images</title>
+	
+	<link rel='stylesheet' href='css/style.css'>
+	
+	<style>
+	
+		.grid {
+			width: 977px;
+			height: 506px;
+			overflow: hidden;
+			position: relative;
+			-webkit-transform: translate3d(0,0,0); /* smoothness */
+		}
+
+		.grid > div, .blink {
+			position: absolute;
+			width: 338px;
+			height: 165px;
+      -webkit-transition: all 0.3s ease-out;  
+      -moz-transition:    all 0.3s ease-out;  
+      -ms-transition:     all 0.3s ease-out;  
+      -o-transition:      all 0.3s ease-out; 
+      transition:         all 0.3s ease-out; 
+      cursor: pointer; 
+		}
+		.a {
+			left: 0;
+		}
+		.b {
+			left: 350px
+		}
+		.c {
+			left: 700px;
+		}
+		.one {
+			top: 0;
+		}
+		.two {
+			top: 175px;
+		}
+		.three {
+			top: 350px;
+		}
+		.a1 { background: url(images/a1.jpg) 0      0       no-repeat; }
+		.a2 { background: url(images/a2.jpg) 0      -175px  no-repeat; }
+		.a3 { background: url(images/a3.jpg) 0      -350px  no-repeat; }
+		.b1 { background: url(images/b1.jpg) -350px 0       no-repeat; }
+		.b2 { background: url(images/b2.jpg) -350px -175px  no-repeat; }
+		.b3 { background: url(images/b3.jpg) -350px -350px  no-repeat; }
+		.c1 { background: url(images/c1.jpg) -700px 0       no-repeat; }
+		.c2 { background: url(images/c2.jpg) -700px -175px  no-repeat; }
+		.c3 { background: url(images/c3.jpg) -700px -350px  no-repeat; }
+		
+		.grid > div.active {
+			width: 977px;
+			height: 506px;
+			top: 0;
+			left: 0;
+			background-position: 0 0;
+			z-index: 1;
+		}
+		
+		#cursor {
+		  position: absolute;
+			left: 0;
+			top: 0;
+			background: url(images/cursor.png);
+			width: 50px;
+			height: 65px;
+			z-index: 6;
+			-webkit-transform: translateX(1000px) translateY(0) translate3d(0,0,0);
+			-webkit-animation: cursor-move 5s 2s linear forwards; 
+			-moz-transform:    translateX(1000px) translateY(0);
+			-moz-animation:    cursor-move 5s 2s linear forwards;
+			-ms-transform:    translateX(1000px) translateY(0);
+			-ms-animation:    cursor-move 5s 2s linear forwards;
+			-o-transform:    translateX(1000px) translateY(0);
+			-o-animation:    cursor-move 5s 2s linear forwards;
+			transform:    translateX(1000px) translateY(0);
+			animation:    cursor-move 5s 2s linear forwards;
+		}
+		
+		@-webkit-keyframes cursor-move {
+			0%   { -webkit-transform: translateX(1000px) translateY(0);    }
+			25%  { -webkit-transform: translateX(824px)  translateY(90px); }
+			50%  { -webkit-transform: translateX(450px)  translateY(255px);}
+			75%  { -webkit-transform: translateX(162px)  translateY(27px); }
+			100% { -webkit-transform: translateX(-100px) translateY(0);    }
+		}
+		@-moz-keyframes cursor-move {
+			0%   { -moz-transform: translateX(1000px) translateY(0);    }
+			25%  { -moz-transform: translateX(824px)  translateY(90px); }
+			50%  { -moz-transform: translateX(450px)  translateY(255px);}
+			75%  { -moz-transform: translateX(162px)  translateY(27px); }
+			100% { -moz-transform: translateX(-100px) translateY(0);    }
+		}
+		@-ms-keyframes cursor-move {
+			0%   { -ms-transform: translateX(1000px) translateY(0);    }
+			25%  { -ms-transform: translateX(824px)  translateY(90px); }
+			50%  { -ms-transform: translateX(450px)  translateY(255px);}
+			75%  { -ms-transform: translateX(162px)  translateY(27px); }
+			100% { -ms-transform: translateX(-100px) translateY(0);    }
+		}
+		@-o-keyframes cursor-move {
+			0%   { -o-transform: translateX(1000px) translateY(0);    }
+			25%  { -o-transform: translateX(824px)  translateY(90px); }
+			50%  { -o-transform: translateX(450px)  translateY(255px);}
+			75%  { -o-transform: translateX(162px)  translateY(27px); }
+			100% { -o-transform: translateX(-100px) translateY(0);    }
+		}
+	
+		.blink {
+			background: white;
+			opacity: 0;
+			text-indent: -9999px;
+			z-index: -1;
+		}
+		.blink-one {
+			left: 700px;
+			top: 0;
+			-webkit-animation: flash 1s 3s 1 linear forwards;
+			-moz-animation: flash 1s 3s 1 linear forwards;
+			-ms-animation: flash 1s 3s 1 linear forwards;
+			-o-animation: flash 1s 3s 1 linear forwards;
+		}
+		.blink-two {
+			left: 350px;
+			top: 175px;
+			-webkit-animation: flash 1s 4.3s 1 linear forwards;
+			-moz-animation: flash 1s 4.3s 1 linear forwards;
+			-ms-animation: flash 1s 4.3s 1 linear forwards;
+			-o-animation: flash 1s 4.3s 1 linear forwards;
+		}
+		.blink-three {
+			left: 0;
+			top: 0;
+			-webkit-animation: flash 1s 5.8s 1 linear forwards;
+			-moz-animation: flash 1s 5.8s 1 linear forwards;
+			-ms-animation: flash 1s 5.8s 1 linear forwards;
+			-o-animation: flash 1s 5.8s 1 linear forwards;
+		}
+		
+		@-webkit-keyframes flash { 
+		  0%   { -webkit-transform: scale(1);   opacity: 0.8; }
+		  99%  { -webkit-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		/* Firefox requires z-index to be declared in all keyframes */
+		@-moz-keyframes flash {
+		  0%   { -moz-transform: scale(1);   opacity: 0.8; z-index: 100; }
+		  99%  { -moz-transform: scale(1.6); opacity: 0;   z-index: 100; }
+		  100% { z-index: -1; }
+		}
+		@-ms-keyframes flash { 
+		  0%   { -ms-transform: scale(1);   opacity: 0.8; }
+		  99%  { -ms-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		@-o-keyframes flash { 
+		  0%   { -o-transform: scale(1);   opacity: 0.8; }
+		  99%  { -o-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+	
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			
+			$all = $(".grid > div");
+			
+			var zindex = 2;
+			
+			$all.click(function() {
+			
+				$(this)
+					.css("z-index", zindex)
+					.toggleClass("active");
+					
+				zindex++;
+			
+			});
+						
+		});
+	
+	</script>
+</head>
+
+<body>
+
+	<div id="page-wrap">
+	
+		<h1>Nine Image Expander Thing</h1>
+
+		<p>HTML/CSS/Light JavaScript conversion of a Flash interaction.</p>
+
+		<p>Images, original technique, everything courtesy of <a href="http://pekta.com/">PEKTA</a> (Zoran Pekoviċ).</p>
+		
+		<div class="grid">
+		
+			<div class="a one a1"></div>
+			<div class="a two a2"></div>
+			<div class="a three a3"></div>
+			
+			<div class="b one b1"></div>
+			<div class="b two b2"></div>
+			<div class="b three b3"></div>
+			
+			<div class="c one c1"></div>
+			<div class="c two c2"></div>
+			<div class="c three c3"></div>
+			
+			<span id="cursor"></span>
+			
+			<span class="blink blink-one">Click on the images to reveal another.</span>
+			<span class="blink blink-two"></span>
+			<span class="blink blink-three"></span>
+		
+		</div>
+		
+	</div>
+	
+</body>
+
+</html>

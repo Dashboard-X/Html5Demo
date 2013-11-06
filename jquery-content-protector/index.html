@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Secure your Website Content with  jQuery - w3lessons.infot</title>
+<link href="style.css" media="all" rel="stylesheet" type="text/css" />
+<link href="fb-buttons.css" media="all" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="secure.js"></script>
+<script type="text/javascript">
+$(function() {
+   $('body').w3secure({enableprotect: true}); // turn off content protection by set false
+});
+function FacebookprofileTip(id, post, delay) {
+	// ID: Unique user ID
+	// Post: Unique Message/Post ID
+	// Delay: 0 - on mouse IN; 1 - on mouse OUT;
+	if(delay == 1) {
+		clearInterval(TipTimer);
+	} else {
+		TipTimer = setInterval(function(){
+
+			var msgType = 'message';
+			// The position to be increased
+			var height = 58;
+			var left = 20;
+
+		
+		// Start displaying the profile card with the preloader
+		$('#profile-tip').show();
+		$('#profile-tip').html('<div class="profile-tip-padding"><div class="loader"></div></div>');
+	
+		// Get the position of the parent element
+		var position = $("#"+msgType+post).position();
+		// Store the position into an array
+		var pos = {
+			top: (position.top + height) + 'px',
+			left: (position.left + left) + 'px'
+		};
+		
+		// Set the position of the profile card
+		$('#profile-tip').css(pos);
+		$.ajax({
+			type: "POST",
+			url: "fetch_profile.php",
+			data: 'user_id='+id,
+			cache: false,
+			success: function(html) {	
+				$('#profile-tip').html(html);
+			},
+			error: function() {
+				$('#profile-tip').hide();
+			}
+		});
+		clearInterval(TipTimer);
+		}, 500);
+	}
+}
+$(document).ready(function() {
+$('#profile-tip').mouseleave(function() {
+		$('#profile-tip').hide();
+	});
+
+jQuery('.s_download').click(function() {
+			var semail = jQuery("#itzurkarthi_email").val();
+			if(semail == '')
+			{
+				alert('Enter Email');
+				return false;
+			}
+			var str = "sub_email="+semail
+			jQuery.ajax({
+				type: "POST",
+				url: "download.php",
+				data: str,
+				cache: false,
+				success: function(htmld){
+						jQuery('#down_update').html(htmld);
+				}
+			});
+	  });
+
+});
+</script>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Mouse Right Click and other Shortcut Keys are Disabled in this Page - w3lessons.info</h2>
+
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite_indivi */
+google_ad_slot = "0527018651";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<br />
+
+<div class="msg_body" id="message45">
+<div class="msg_img">
+<img onmouseover="FacebookprofileTip(1, 45, 0)" onmouseout="FacebookprofileTip(0, 0, 1);" onclick="FacebookprofileTip(0, 0, 1);" src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div> 
+<div class="msg_text">
+Secure Webpage Content - jQuery <a href="http://w3lessons.info/2013/10/28/secure-web-page-content-using-jquery">read more</a> 
+<div class="time">2 seconds ago</div> 
+</div> 
+</div>
+
+<div class="msg_body" id="message1">
+<div class="msg_img">
+<img onmouseover="FacebookprofileTip(1, 1, 0)" onmouseout="FacebookprofileTip(0, 0, 1);" onclick="FacebookprofileTip(0, 0, 1);" src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div> 
+<div class="msg_text">
+w3lessons.info Programming Blog <a href="http://www.w3lessons.info">http://w3lessons.info</a> 
+<div class="time">5 seconds ago</div> 
+</div> 
+</div>
+
+<div class="msg_body" id="message2">
+<div class="msg_img">
+<img onmouseover="FacebookprofileTip(1, 2, 0)" onmouseout="FacebookprofileTip(0, 0, 1);" onclick="FacebookprofileTip(0, 0, 1);" src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div> 
+<div class="msg_text">
+Multiple Images Upload to Amazon S3 using PHP & jQuery <a href="http://w3lessons.info/2013/09/06/multiple-images-upload-to-amazon-s3-using-php-jquery/" target="_blank">Read More</a> 
+<div class="time">5 seconds ago</div>
+</div> 
+</div>
+
+
+<div class="msg_body" id="message3">
+<div class="msg_img">
+<img onmouseover="FacebookprofileTip(1, 3, 0)" onmouseout="FacebookprofileTip(0, 0, 1);" onclick="FacebookprofileTip(0, 0, 1);" src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div> 
+<div class="msg_text">
+Animated Windows Metro Boxes using CSS3 <a href="http://w3lessons.info/2013/08/26/animated-windows-metro-boxes-using-css3/" target="_blank">Read More</a> 
+<div class="time">5 seconds ago</div>
+</div> 
+</div>
+
+<div class="msg_body" id="message4">
+<div class="msg_img">
+<img onmouseover="FacebookprofileTip(1, 4, 0)" onmouseout="FacebookprofileTip(0, 0, 1);" onclick="FacebookprofileTip(0, 0, 1);" src="http://0.gravatar.com/avatar/82620dd66b22b34a915303b93b92929b" />
+</div> 
+<div class="msg_text">
+Animated Search Box with CSS3 <a href="http://w3lessons.info/2013/07/23/animated-search-box-with-css3/" target="_blank">Read More</a> 
+<div class="time">5 seconds ago</div>
+</div> 
+</div>
+
+
+<div id="profile-tip"></div>
+
+<table width="100%">
+<tr>
+<td valign="top">
+<div id="fb_download">
+  <h4>Download script for subscribed users only!</h4>
+  <table>
+  <tr>
+  <td>Enter your email : </td><td><input type="text" style="width:200px; padding:2px;" name="sub_email" id="itzurkarthi_email" value=""></td><td><input class="s_download" type="button" value="Download"></td>
+  </tr>
+  </table>
+  
+  <div id="down_update" style="padding:5px;"> </div>
+  
+  <h4>New users please subscribe here!</h4>
+  <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=nextweb2', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+   <table>
+  <tr>
+  <td>Enter your email :</td><td><input type="text" style="width:200px; padding:2px;" name="email"/><input type="hidden" value="nextweb2" name="uri"/><input type="hidden" name="loc" value="en_US"/></td><td><input type="submit" class="uibutton" value="Subscribe" /></td>
+  </tr>
+  <tr>
+  <td colspan="3" align="center"><p><a href="http://feeds.feedburner.com/nextweb2"><img src="http://feeds.feedburner.com/~fc/nextweb2?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p></td>
+  </tr>
+  </table>
+  </form>
+  
+  <p><font color="#FF0000">Note</font> : New subscribers email data will be updated every 10 hours</p>
+  
+  
+  </div>
+  </td>
+  <td valign="top" align="center">
+<center><script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite */
+google_ad_slot = "2922638918";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+</center>
+</td>
+</tr>
+</table>
+</div>
+
+
+<script type="text/javascript">
+
+var addthis_config = addthis_config||{};
+addthis_config.data_track_addressbar = false;
+</script>
+<div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:50px;top:50px;"> <a class="addthis_button_facebook_like" fb:like:layout="box_count"></a> <a class="addthis_button_tweet" tw:count="vertical"></a> <a class="addthis_button_google_plusone" g:plusone:size="tall"></a> <a class="addthis_counter"></a> </div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4fae5bbe69fd40f0"></script>
+<p style="font-size:12px;">
+  <center>
+    <a href="http://w3lessons.info">by Karthikeyan K</a>
+  </center>
+</p>
+</body>
+</html>

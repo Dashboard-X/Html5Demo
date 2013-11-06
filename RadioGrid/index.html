@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Radio Grid</title>
+	
+	<link rel='stylesheet' href='css/style.css'>
+	
+	<style>
+		table {
+		    border-collapse: collapse;    
+		}
+		td, th {
+		    border: 1px solid #ccc;
+		    padding: 10px;
+		}
+		th:empty {
+		    border: 0;
+		}
+	</style>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script>
+		$(function() {
+			var col, el;
+			
+			$("input[type=radio]").click(function() {
+			   el = $(this);
+			   col = el.data("col");
+			   $("input[data-col=" + col + "]").prop("checked", false);
+			   el.prop("checked", true);
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="page-wrap">
+		
+		<table>
+		<tr>
+		    <th></th>
+		    <th>1</th>
+		    <th>2</th>
+		    <th>3</th>
+		</tr>
+		<tr>
+		    <td>Twix</td>
+		    <td><input type="radio" name="row-1" data-col="1"></td>
+		    <td><input type="radio" name="row-1" data-col="2"></td>
+		    <td><input type="radio" name="row-1" data-col="3"></td>
+		</tr>
+		<tr>
+		    <td>Snickers</td>
+		    <td><input type="radio" name="row-2" data-col="1"></td>
+		    <td><input type="radio" name="row-2" data-col="2"></td>
+		    <td><input type="radio" name="row-2" data-col="3"></td>
+		</tr>
+		<tr>
+		    <td>Butterfingers</td>
+		    <td><input type="radio" name="row-3" data-col="1"></td>
+		    <td><input type="radio" name="row-3" data-col="2"></td>
+		    <td><input type="radio" name="row-3" data-col="3"></td>
+		</tr>
+		</table>
+	
+	</div>
+	
+</body>
+
+</html>

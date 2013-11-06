@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Facebook Style Tag Creator using jQuery & CSS - w3lessons.info</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).on('keydown', '#tag_list', function (e) {
+    if (e.keyCode == 13) {
+        createTag($(this).val());
+    }
+});
+$(document).on('click', '.delete', function () {
+    $(this).parent().remove();
+});
+
+function createTag(text) {
+    if (text != '') {
+        var tag = $('<div class="tags">' + text + '<a class="delete"></a></div>');
+        tag.insertBefore($('#tag_list'), $('#tag_list'));
+        $('#tag_list').val('');
+    }
+}
+
+
+</script>
+<style>
+.tags {
+	float: left;
+	margin-right: 2px;
+	margin-bottom: 7px;
+	margin-top:1px;
+	height: 22px;
+	border-radius: 4px;
+	border: 1px solid #cccccc;
+	font: normal 14px/20px 'Sanchez';
+	background: #ebeaea;
+	background: -o-linear-gradient(top, #C4CDE0, #C4CDE0);
+	background: -webkit-linear-gradient(top, #C4CDE0, #C4CDE0);
+	background: -moz-linear-gradient(top, #C4CDE0, #C4CDE0);
+	background: -ms-linear-gradient(top, #C4CDE0, #C4CDE0);
+	background: linear-gradient(top, #C4CDE0, #C4CDE0);
+ filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#C4CDE0", endColorStr="#C4CDE0");
+	border-color: #cccccc;
+	cursor: pointer;
+	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3);
+	padding-left: 6px;
+	padding-right: 28px;
+	position: relative;
+}
+.tags .delete {
+	display: block;
+	width: 20px;
+	height: inherit;
+	float: right;
+	background: rgba(255, 255, 255, 0.5) url('delete.png') center no-repeat;
+	margin-left: 6px;
+	border-left: 1px solid #ccc;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.text {
+	height: 30px;
+	border-radius: 2px;
+	border: 1px solid #e9e8e8;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin-bottom: 20px;
+	width: 95%;
+	background: #fff;
+	margin:10px;
+}
+.text input {
+	border: 0;
+	background: none;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 5 5px;
+	margin-top: 3px;
+	font: 400 14px/18px 'Sanchez';
+}
+.text input:active {
+	border:0;
+}
+.text input {
+	width: 200px;
+	overflow: hidden;
+}
+
+</style>
+</head>
+<body style="background:#fafafa;">
+
+<div style="margin:30px auto; width:900px; height:500px; background:#fff;">
+<center><script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite_indivi */
+google_ad_slot = "0527018651";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<h2 style="text-align:center; margin-top:20px;">Facebook Style Tag Selector Demo using jQuery & CSS</h2>
+
+<div class="text">
+        <div class="tags">jQuery<a class="delete"></a></div>
+        <input type="text" placeholder="Type & Enter" id="tag_list"/>
+</div>
+<table>
+<tr>
+<td valign="top">
+ <div id="fb_download" style="display:block; background:#fff; clear:both; margin:50px;">
+     
+      <h3>Download Script for Subscribed Users Only!</h3>
+      <table>
+        <tr>
+          <td>Enter your email : </td>
+          <td><input type="text" style="width:200px; padding:2px;" name="sub_email" id="itzurkarthi_email" value=""></td>
+          <td><input class="uibutton s_download" type="button" value="Download"></td>
+        </tr>
+      </table>
+      <div id="down_update" style="padding:5px;"> </div>
+      <h3>New users please subscribe here!</h3>
+      <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onSubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=nextweb2', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+        <table>
+          <tr>
+            <td>Enter your email :</td>
+            <td><input type="text" style="width:200px; padding:2px;" name="email"/>
+              <input type="hidden" value="nextweb2" name="uri"/>
+              <input type="hidden" name="loc" value="en_US"/></td>
+            <td><input type="submit" class="uibutton" value="Subscribe" /></td>
+          </tr>
+          <tr>
+            <td colspan="3" align="center"><p><a href="http://feeds.feedburner.com/nextweb2"><img src="http://feeds.feedburner.com/~fc/nextweb2?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p></td>
+          </tr>
+        </table>
+      </form>
+      <p><font color="#FF0000">Note</font> : New subscribers email data will be updated every 10 hours</p>
+    </div>
+</td>
+<td align="center" valign="top">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite_content */
+google_ad_slot = "2545318173";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+</tr></table>    
+    </div>
+    
+    <center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* footer */
+google_ad_slot = "7568359776";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+</body>
+</html>

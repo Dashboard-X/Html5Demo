@@ -1,0 +1,29 @@
+/*
+         Twitter Page
+		 Chris Coyier
+		 http://css-tricks.com
+*/
+
+*					{ margin: 0; padding: 0; }
+body				{ font-size: 62.5%; font-family: Georgia, serif;
+	 				  background: url(images/page-bg.jpg) top left no-repeat #2f2e2c;}
+
+#twitter_div { 
+	position: absolute; 
+	left: 186px; 
+	top: 99px; 
+	width: 376px; 
+	height: 360px; 
+	overflow: auto;
+}
+ul#twitter_update_list { 
+	list-style: none; 
+	font-size: 14px;	
+}
+ul#twitter_update_list li { 
+	margin-bottom: 10px;
+	padding: 10px;
+	color: #7a8a99;
+	background: url(images/transpBlue.png);
+}
+a { color: #96997a; }

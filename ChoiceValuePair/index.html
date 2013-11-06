@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Choice and Value Pair</title>
+	
+	<link rel='stylesheet' href='css/style.css'>
+	
+	<style>
+		input[type='radio'] + input[type='number'] { 
+		    display: none;
+		    float: right;
+		    margin-right: 20px;
+		    width: 100px;
+		}
+		input[type='radio']:checked + input[type='number'] { 
+		    display: inline; 
+		}
+		
+		input[type='radio']:checked:before { 
+		    background: #ebdcad; 
+		    content: ""; 
+		    position: absolute;
+		    top: 0; right: 0; bottom: 0; left: 0;
+		    border-radius: 8px;
+		    z-index: -1;
+		}
+		input[type='radio']:after {
+		    position: absolute;
+		    right: 9px;
+		    top: 9px;
+		}
+		input[data-label]:checked:after {
+			content: attr(data-label);
+		}
+		
+		label, input[type='radio'] {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="page-wrap">
+		
+		<h1>Choice &amp; Value Pair</h1>
+
+		<form name="form" method="post" action="#">
+		    
+		    <div>
+				<label for="oz">
+				  <input type="radio" name="choice" value="oz" id="oz" data-label="Ozs"> 
+				  
+				  Ounces
+				  
+				  <input type="number" name="oz-val">
+				</label>
+		    </div>
+		    
+		    <div>
+		      <label for="cups">
+		          <input type="radio" name="choice" value="cups" id="cups" data-label="Cps"> 
+		          
+		          Cups
+		          
+		          <input type="number" name="cup-val">
+		       </label>
+		    </div>
+		    
+		    <div>
+		      <label for="pints">
+		          <input type="radio" name="choice" value="pints" id="pints" data-label="Pts"> 
+		          
+		          Pints
+		          
+		          <input type="number" name="pints-val">
+		       </label>
+		    </div>
+		    
+		</form>
+	
+	</div>
+	
+</body>
+
+</html>
